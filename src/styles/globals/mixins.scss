@@ -19,7 +19,7 @@
   font-weight: 700;
   text-rendering: auto;
 }
-  
+
 @mixin loader($size: 2rem) {
   animation: rotate 500ms infinite linear;
   border: 3px solid;

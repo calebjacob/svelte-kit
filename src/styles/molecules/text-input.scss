@@ -106,7 +106,7 @@
     padding-left: var(--input-height-large);
   }
 
-  .text-input--has-content .text-input__input[aria-invalid=false] + & {
+  .text-input--has-content .text-input__input[aria-invalid='false'] + & {
     &::before {
       @include icon('\f00c');
       animation: growIn 250ms;

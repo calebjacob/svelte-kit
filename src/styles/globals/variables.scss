@@ -10,12 +10,16 @@ $mobile-breakpoint: 450px;
   --color-brand-primary-hue: 218;
   --color-brand-primary-saturation: 100%;
   --color-brand-primary-lightness: 50%;
-  --color-brand-primary: hsl(var(--color-brand-primary-hue), var(--color-brand-primary-saturation), var(--color-brand-primary-lightness));
+  --color-brand-primary: hsl(var(--color-brand-primary-hue),
+  var(--color-brand-primary-saturation),
+  var(--color-brand-primary-lightness));
 
   --color-brand-secondary-hue: 20;
   --color-brand-secondary-saturation: 100%;
   --color-brand-secondary-lightness: 60%;
-  --color-brand-secondary: hsl(var(--color-brand-secondary-hue), var(--color-brand-secondary-saturation), var(--color-brand-secondary-lightness));
+  --color-brand-secondary: hsl(var(--color-brand-secondary-hue),
+  var(--color-brand-secondary-saturation),
+  var(--color-brand-secondary-lightness));
 
   --color-surface-1: hsl(var(--color-brand-primary-hue), 25%, 5%);
   --color-surface-2: hsl(var(--color-brand-primary-hue), 25%, 10%);
@@ -56,7 +60,8 @@ $mobile-breakpoint: 450px;
 
   --border-radius: 6px;
   --focus-glow: 0 0 14px 2px hsl(var(--color-brand-primary-hue), 20%, 15%);
-  --focus-glow: 0 0 0 2px hsl(var(--color-brand-primary-hue), var(--color-brand-primary-saturation), var(--color-brand-primary-lightness));
+  --focus-glow: 0 0 0 2px
+    hsl(var(--color-brand-primary-hue), var(--color-brand-primary-saturation), var(--color-brand-primary-lightness));
   --input-height-large: 3.125rem;
   --input-height: 2.75rem;
   --input-height-small: 2rem;
