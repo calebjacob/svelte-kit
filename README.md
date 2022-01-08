@@ -1,38 +1,81 @@
-# create-svelte
+# SvelteKit
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
+A starter project ready to rock and roll!
 
-## Creating a project
+- [TypeScript](https://www.typescriptlang.org/)
+- [SvelteKit](https://kit.svelte.dev/)
+- [SCSS](https://sass-lang.com/)
+- [ESLint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+- [Stylelint](https://stylelint.io/)
+- [Font Awesome 5](https://fontawesome.com/icons?d=gallery&p=2)
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Conventions & Documentation
 
-```bash
-# create a new project in the current directory
-npm init svelte@next
+- [Styles](docs/styles.md)
+- [Testing](docs/testing.md)
+- [Deploying With Dokku](docs/dokku.md)
+- [VS Code Snippets](docs/vs-code-snippets.md)
 
-# create a new project in my-app
-npm init svelte@next my-app
+## Getting Started
+
+To get started, make sure you have NVM installed to manage your current version of Node and NPM:
+
+```sh
+brew install nvm
 ```
 
-> Note: the `@next` is temporary
+Once NVM has been installed, navigate to the project's root directory and run:
 
-## Developing
+```sh
+nvm install
+nvm use
+```
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Now install all of the project's dependencies via NPM:
 
-```bash
+```sh
+npm ci
+```
+
+You'll need to set up a local `.env` file to declare our required environment variables. You can copy the example file to get up and running locally:
+
+```sh
+cp .env.example .env
+```
+
+Finally, you can start up the application:
+
+```sh
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+This starts your app in development mode, rebuilding assets on file changes. If you make a change to your `.env` file, you'll need to quit the `npm run dev` process and restart.
 
-Before creating a production version of your app, install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment. Then:
+## Testing
 
-```bash
-npm run build
+TODO...
+
+## Linting / Formatting
+
+To format, lint, and fix all code:
+
+```sh
+npm run lint
 ```
 
-> You can preview the built app with `npm run preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.
+## Check / Verify Types
+
+To verify TypeScript code:
+
+```sh
+npm run check
+```
+
+## Build for Production
+
+To build and run for production:
+
+```sh
+npm run production
+```
