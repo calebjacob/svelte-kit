@@ -1,0 +1,12 @@
+{
+	"recommendations": [
+		"dbaeumer.vscode-eslint",
+		"waderyan.gitblame",
+		"esbenp.prettier-vscode",
+		"rohit-gohri.format-code-action",
+		"svelte.svelte-vscode",
+		"stylelint.vscode-stylelint",
+		"mrmlnc.vscode-scss",
+		"tyriar.sort-lines"
+	]
+}

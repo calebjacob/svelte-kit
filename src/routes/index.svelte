@@ -1,3 +1,6 @@
+<script lang="ts">
+</script>
+
 <div class="layout layout--vertical-align">
 	<div class="container">
 		<section class="section center">
