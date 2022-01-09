@@ -15,8 +15,9 @@
   }
 }
 
-.notifications__notification {
+.notifications__item {
   margin: var(--spacing) 0 0;
+  overflow: hidden;
 }
 
 .notifications__content {
@@ -33,11 +34,11 @@
     font-weight: 400;
   }
 
-  .notifications__notification--error & {
+  .notifications__item--error & {
     background: var(--color-danger);
   }
 
-  .notifications__notification--success & {
+  .notifications__item--success & {
     background: var(--color-success);
   }
 

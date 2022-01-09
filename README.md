@@ -15,7 +15,6 @@ A starter project ready to rock and roll!
 - [Styles](docs/styles.md)
 - [Testing](docs/testing.md)
 - [Deploying With Dokku](docs/dokku.md)
-- [VS Code Snippets](docs/vs-code-snippets.md)
 
 ## Getting Started
 

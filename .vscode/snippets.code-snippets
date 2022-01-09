@@ -1,7 +1,13 @@
 {
-	"Script - TS": {
+	"Script - TypeScript": {
 		"scope": "svelte",
-		"prefix": "st",
+		"prefix": "sct",
 		"body": ["<script lang=\"ts\">", "  $1", "</script>"]
+	},
+
+	"Script - Module": {
+		"scope": "svelte",
+		"prefix": "scm",
+		"body": ["<script context=\"module\" lang=\"ts\">", "  $1", "</script>"]
 	}
 }

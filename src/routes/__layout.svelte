@@ -3,6 +3,7 @@
 	import TheFooter from '$lib/components/the-footer.svelte';
 	import '../styles/font-awesome.css';
 	import '../styles/build/index.css';
+	import TheNotifications from '$lib/components/the-notifications.svelte';
 </script>
 
 <TheHeader />
@@ -12,3 +13,5 @@
 </main>
 
 <TheFooter />
+
+<TheNotifications />
