@@ -1,4 +1,4 @@
-import { get, writable } from 'svelte/store';
+import { writable } from 'svelte/store';
 import { v4 as uuid } from 'uuid';
 import timer from '$lib/helpers/timer';
 
@@ -20,19 +20,19 @@ interface ShowNotificationOptions {
 export const notifications = writable([] as Notification[]);
 
 export function hideNotification(notification: Notification) {
-	const allNotifications = get(notifications).filter((n) => {
-		return n.id !== notification.id;
+	notifications.update((value) => {
+		return value.filter((n) => {
+			return n.id !== notification.id;
+		});
 	});
-
-	notifications.set(allNotifications);
 }
 
 export function hideErrorNotifications(): void {
-	const allNotifications = get(notifications).filter((n) => {
-		return n.type !== 'ERROR';
+	notifications.update((value) => {
+		return value.filter((n) => {
+			return n.type !== 'ERROR';
+		});
 	});
-
-	notifications.set(allNotifications);
 }
 
 export async function showNotification({
@@ -47,9 +47,9 @@ export async function showNotification({
 		type
 	};
 
-	const allNotifications = [...get(notifications), notification];
-
-	notifications.set(allNotifications);
+	notifications.update((value) => {
+		return [...value, notification];
+	});
 
 	if (autoHide) {
 		await timer(4000);
