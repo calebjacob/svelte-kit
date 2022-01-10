@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { openModal } from '$lib/stores/modals';
+	import { openModal } from '$lib/stores/modal';
 	import { showNotification } from '$lib/stores/notifications';
 </script>
 
@@ -66,7 +66,7 @@
 
 					<hr />
 
-					<h3 class="title title--3">Notifications</h3>
+					<h3 class="title title--3">Modals</h3>
 
 					<div class="group">
 						<div class="layout layout--hz layout--j-start margin-b">
@@ -75,9 +75,17 @@
 								type="button"
 								on:click={() =>
 									openModal.confirm({
-										title: 'Do you like food?',
+										ctaTextCancel: 'No',
+										ctaTextConfirm: 'Yes',
 										description:
-											'Food is pretty important for living - and most of it tastes really good.'
+											'Food is pretty important for living - and most of it tastes really good.',
+										title: 'Do you like food?',
+										onCancel() {
+											window.alert('Answer is: NO');
+										},
+										onConfirm() {
+											window.alert('Answer is: YES');
+										}
 									})}
 							>
 								Confirm

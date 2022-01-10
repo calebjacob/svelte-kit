@@ -1,6 +1,6 @@
 TODO
 
-- [] Add modals
+- [] Add error handler
 - [] Add form validation example
 - [] Add dummy load/action data flows
 - [] Add example of reactive data on FE

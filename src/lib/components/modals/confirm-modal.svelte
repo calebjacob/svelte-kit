@@ -1,33 +1,51 @@
 <script lang="ts">
 	import type { ConfirmModalOptions } from './types';
-	import { closeModal } from '$lib/stores/modals';
+	import { closeModal } from '$lib/stores/modal';
 
-	export let options: ConfirmModalOptions = {
-		title: 'Are you sure?'
-	};
+	export let options: ConfirmModalOptions = {};
 
-	function cancel() {
-		// TODO: Call onCancel prop if passed in
+	$: ctaTextCancel = options.ctaTextCancel || 'Never Mind';
+	$: ctaTextConfirm = options.ctaTextConfirm || 'Continue';
+	$: description = options.description || '';
+	$: title = options.title || 'Are you sure?';
+
+	async function cancel() {
+		if (options.onCancel) {
+			try {
+				await options.onCancel();
+			} catch (error) {
+				console.log(error); // TODO: Handle error with error handler
+			}
+		}
+
 		closeModal();
 	}
 
-	function confirm() {
-		// TODO: Call onConfirm prop if passed in
+	async function confirm() {
+		if (options.onConfirm) {
+			try {
+				await options.onConfirm();
+			} catch (error) {
+				console.log(error); // TODO: Handle error with error handler
+			}
+		}
+
 		closeModal();
 	}
 </script>
 
 <div class="section center">
-	<h2 class="title title--2">{options.title}</h2>
+	<h2 class="title title--2">{title}</h2>
 
-	{#if options.description}
-		<p>{options.description}</p>
+	{#if description}
+		<p>{description}</p>
 	{/if}
 
 	<hr />
 
 	<div class="layout layout--hz layout--hz-equal">
-		<button type="button" class="button button--border" on:click={cancel}>Never Mind</button>
-		<button type="button" class="button button--primary" on:click={confirm}>Continue</button>
+		<button type="button" class="button button--border" on:click={cancel}>{ctaTextCancel}</button>
+		<button type="button" class="button button--primary" on:click={confirm}>{ctaTextConfirm}</button
+		>
 	</div>
 </div>
