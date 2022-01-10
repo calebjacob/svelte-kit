@@ -13,24 +13,22 @@
 		if (options.onCancel) {
 			try {
 				await options.onCancel();
+				closeModal();
 			} catch (error) {
 				console.log(error); // TODO: Handle error with error handler
 			}
 		}
-
-		closeModal();
 	}
 
 	async function confirm() {
 		if (options.onConfirm) {
 			try {
 				await options.onConfirm();
+				closeModal();
 			} catch (error) {
 				console.log(error); // TODO: Handle error with error handler
 			}
 		}
-
-		closeModal();
 	}
 </script>
 
