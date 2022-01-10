@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { openModal } from '$lib/stores/modals';
 	import { showNotification } from '$lib/stores/notifications';
 </script>
 
@@ -59,6 +60,27 @@
 									})}
 							>
 								Regular
+							</button>
+						</div>
+					</div>
+
+					<hr />
+
+					<h3 class="title title--3">Notifications</h3>
+
+					<div class="group">
+						<div class="layout layout--hz layout--j-start margin-b">
+							<button
+								class="link color-success"
+								type="button"
+								on:click={() =>
+									openModal.confirm({
+										title: 'Do you like food?',
+										description:
+											'Food is pretty important for living - and most of it tastes really good.'
+									})}
+							>
+								Confirm
 							</button>
 						</div>
 					</div>
