@@ -74,7 +74,7 @@
 					<div class="group">
 						<div class="layout layout--hz layout--j-start margin-b">
 							<button
-								class="link color-success"
+								class="link color-primary"
 								type="button"
 								on:click={() =>
 									openModal.confirm({
