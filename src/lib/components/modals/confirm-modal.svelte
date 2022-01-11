@@ -1,21 +1,25 @@
 <script lang="ts">
-	import type { ConfirmModalOptions } from './types';
-	import { closeModal } from '$lib/stores/modal';
+	import type { ConfirmModalOptions } from '$lib/modules/modals/types';
+	import { useErrors } from '$lib/modules/errors';
 
+	export let close: () => void;
 	export let options: ConfirmModalOptions = {};
+
+	const { handleError } = useErrors();
 
 	$: ctaTextCancel = options.ctaTextCancel || 'Never Mind';
 	$: ctaTextConfirm = options.ctaTextConfirm || 'Continue';
 	$: description = options.description || '';
+	$: iconClass = options.iconClass || 'fa-question-circle';
 	$: title = options.title || 'Are you sure?';
 
 	async function cancel() {
 		if (options.onCancel) {
 			try {
 				await options.onCancel();
-				closeModal();
+				close();
 			} catch (error) {
-				console.log(error); // TODO: Handle error with error handler
+				handleError(error as Error);
 			}
 		}
 	}
@@ -24,20 +28,24 @@
 		if (options.onConfirm) {
 			try {
 				await options.onConfirm();
-				closeModal();
+				close();
 			} catch (error) {
-				console.log(error); // TODO: Handle error with error handler
+				handleError(error as Error);
 			}
 		}
 	}
 </script>
 
 <div class="section center">
-	<h2 class="title title--2">{title}</h2>
+	<div class="group">
+		<span class="icon icon--block icon--large {iconClass}" />
 
-	{#if description}
-		<p>{description}</p>
-	{/if}
+		<h2 class="title title--2">{title}</h2>
+
+		{#if description}
+			<p>{description}</p>
+		{/if}
+	</div>
 
 	<hr />
 

@@ -1,6 +1,8 @@
 <script lang="ts">
-	import { hideNotification, notifications } from '$lib/stores/notifications';
+	import { useTheNotifications } from '$lib/modules/notifications';
 	import { slideAndFade } from '$lib/transitions/slide-and-fade';
+
+	const { hideNotification, notifications } = useTheNotifications();
 </script>
 
 <div class="notifications">

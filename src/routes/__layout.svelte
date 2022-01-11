@@ -4,8 +4,8 @@
 	import { onMount } from 'svelte';
 	import TheHeader from '$lib/components/singles/the-header.svelte';
 	import TheFooter from '$lib/components/singles/the-footer.svelte';
+	import TheModals from '$lib/components/singles/the-modals.svelte';
 	import TheNotifications from '$lib/components/singles/the-notifications.svelte';
-	import TheModal from '$lib/components/singles/the-modal.svelte';
 
 	onMount(() => {
 		calculateAppHeight();
@@ -25,5 +25,5 @@
 </main>
 
 <TheFooter />
+<TheModals />
 <TheNotifications />
-<TheModal />

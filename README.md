@@ -12,9 +12,10 @@ A starter project ready to rock and roll!
 
 ## Conventions & Documentation
 
+- [Deploying With Dokku](docs/dokku.md)
+- [Structure](docs/structure.md)
 - [Styles](docs/styles.md)
 - [Testing](docs/testing.md)
-- [Deploying With Dokku](docs/dokku.md)
 
 ## Getting Started
 
