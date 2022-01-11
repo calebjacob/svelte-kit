@@ -41,3 +41,7 @@ Some modules might need to export a single instance (singleton) that's shared th
 ## Services
 
 This is a fairly broad category that could contain singletons, HTTP/API abstractions, and third party library instances.
+
+## Transitions
+
+The built-in Svelte transitions are great, but sometimes you need to create unique/custom transitions that are shared throughout the app.
